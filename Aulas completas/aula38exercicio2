@@ -1,0 +1,14 @@
+from dados import pessoas, produtos, lista
+from functools import reduce
+
+soma_lista = reduce(lambda ac, i: i + ac, lista, 0)
+print(soma_lista)
+print('#'*50)
+
+soma_lista2 = reduce(lambda ac, p: p['preco'] + ac, produtos, 0)
+print(soma_lista2)
+
+print('#'*50)
+
+soma_lista3 = reduce(lambda ac, id: id['idade'] + ac, pessoas, 0)
+print(soma_lista3 / len(pessoas))      #média
